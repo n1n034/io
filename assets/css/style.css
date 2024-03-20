@@ -1,0 +1,92 @@
+*, ::after, ::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: "IBM Plex Sans", sans-serif;
+    color: #000;
+    background: #F0ECE5;
+}
+
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #F0ECE5;
+    padding: 50px 0;
+    z-index: 2;
+}
+
+header .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.container {
+    padding: 0 140px ;
+    width: 100%;
+}
+nav a{
+    font-family: "IBM Plex Mono", monospace;
+    color: #000;
+    font-size: 24px;
+    padding-right: 60px; 
+    text-decoration: none;
+}
+nav a:last-child {
+    padding-right: 0;
+}
+
+.naslovna {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.5) 100%, rgba(0, 0, 0, 0.5) 100%), url("/io/assets/images/pozadina.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+.naslovna-text {
+    position: absolute;
+    bottom: 150px;
+    color: #fff;
+}
+.naslovna-text h2{
+    font-size: 140px;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+.naslovna-text p {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 20px;    
+    max-width: 550px;
+}
+
+.intro-text {
+    padding: 100px 0;
+    max-width: 80%;
+    margin: 0  auto;
+}
+.intro-text .container {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.intro-text h2 {
+    font-size: 36px;
+    max-width: 55%;
+    font-weight: 500;
+}
+
+.intro-text a {
+    font-size: 20px;
+    color: #000;
+    padding: 25px 50px;
+    border: 1px solid #000;
+    border-radius: 50px;
+    text-decoration: none;
+}
