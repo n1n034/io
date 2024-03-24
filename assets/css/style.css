@@ -3,6 +3,9 @@
     margin: 0;
     padding: 0;
 }
+html {
+	scroll-behavior: smooth;
+}
 body{
     font-family: "IBM Plex Mono", monospace;
     color: #000;
@@ -18,7 +21,7 @@ header {
     left: 0;
     width: 100%;
     background: #F0ECE5;
-    padding: 50px 0;
+    padding: 40px 0;
     z-index: 2;
 }
 
@@ -38,14 +41,51 @@ header .container {
 }
 nav a{
     color: #000;
-    font-size: 24px;
-    padding-right: 60px; 
+    font-size: 20px;
+    padding-right: 50px;
     text-decoration: none;
 }
 nav a:last-child {
     padding-right: 0;
 }
-
+.menu-toggle {
+    display: none;
+    position: relative;
+    height: 30px;
+    width: 34px;
+}
+.menu-toggle .bar {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #000;
+    transition: all 0.3s;
+}
+.menu-toggle .bar1 {
+    top: 0;
+}
+.menu-toggle .bar2 {
+    top: 50%;
+    transform: translateY(-50%);
+}
+.menu-toggle .bar3 {
+    bottom: 0;
+}
+.menu-active .menu-toggle .bar1 {
+    top: 50%;
+    transform: translateY(0) rotate(45deg);
+}
+.menu-active .menu-toggle .bar2 {
+    opacity: 0;
+}
+.menu-active .menu-toggle .bar3 {
+    top: 50%;
+    transform: translateY(0) rotate(-45deg);
+}
+.menu-active header nav{
+    height: 100vh;
+}
 .naslovna {
     height: 100vh;
     background: linear-gradient(rgba(0, 0, 0, 0.4) 100%, rgba(0, 0, 0, 0.4) 100%), url("/io/assets/images/pozadina.jpg");
@@ -63,6 +103,7 @@ nav a:last-child {
     font-size: 150px;
     font-weight: 500;
     margin-bottom: 30px;
+    line-height: 1.2;
 }
 .naslovna-text p {
     font-family: "IBM Plex Mono", monospace;
@@ -99,7 +140,7 @@ nav a:last-child {
 .services-01 {
     position: relative;
     width: 25%;
-    padding: 80px 50px 80px 120px;
+    padding: 50px 50px 50px 120px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -124,6 +165,9 @@ nav a:last-child {
     width: calc(100% - 50px);
     background: #000;
 }
+.clients .container-x .services-01::before {
+    height: 0;
+}
 .title span {
     display: block;
     font-size: 22px;
@@ -143,9 +187,8 @@ nav a:last-child {
 .services-swiper {
     position: relative;
     width: 75%;
-    padding: 80px 0 80px 50px;
+    padding: 50px 0 50px 50px;
 }
-
 .swiper-slide {
     height: auto;
     display: flex;
@@ -229,7 +272,7 @@ nav a:last-child {
 .about {
     position: relative;
     width: 75%;
-    padding: 80px 0 80px 50px;
+    padding: 50px 0 50px 50px;
 }
 
 .about::before {
@@ -243,7 +286,6 @@ nav a:last-child {
 }
 .about-items {
     display: flex;
-
 }
 .item {
     padding: 20px 60px;
@@ -264,14 +306,290 @@ nav a:last-child {
 }
 .image img{
     width: 100%;
+    margin-bottom: -5px;
 }
 
 .animacija {
     background: url("/io/assets/images/sponzori.png");
     background-repeat: repeat-x;
     background-size: cover;
-    height: 120px;
+    height: 80px;
     width: 75%;
+    margin-top: 120px;
+    animation: animate 100s linear infinite;
+}
+
+@keyframes animate {
+    from {
+        background-position: 0 center
+    }
+    to {
+        background-position: 10000px center
+    }
+}
+.contact-info {
+    display: flex;
+}
+.contact-item {
+    width: 50%;
+    padding: 20px 40px;
+}
+.contact-item h3 {
+    font-size: 30px;
+}
+.contact-item span {
+    font-size: 18px;
+    color: #666;
+}
+.contact-item p {
+    font-size: 20px;
+    color: #666;
     margin-top: 50px;
-    padding: 40px 0;
+}
+.contact-item a {
+    display: block;
+    color: #666;
+    margin-top: 10px;
+    text-decoration: none;
+    font-size: 20px;
+}
+footer {
+    background-color: #E85A36;
+    color: #fff;
+    padding: 60px 0;
+    text-align: center;
+    font-size: 18px;
+}
+
+@media screen and (max-width: 767px){
+    .container {
+        padding: 0 30px;
+    }
+    header {
+        padding: 15px 0;
+    }
+    .menu-toggle {
+        height: 22px;
+        width: 26px;
+    }
+    nav a {
+        padding: 0 0 20px 0;
+        font-size: 19px;
+    }
+    .naslovna-text h2 {
+        font-size: 45px;
+    }
+    .naslovna-text p {
+        font-size: 16px;
+    }
+    .intro-text {
+        padding: 30px 0;
+        max-width: 100%;
+    }
+    .intro-text h2 {
+        font-size: 20px;
+        max-width: 100%;
+        margin-bottom: 30px;
+    }
+    .intro-text a {
+        font-size: 16px;
+        padding: 10px 30px;
+    }
+    .services-01 {
+        width: 100%;
+        padding: 40px 20px;
+        border-right: 0px;
+    }
+    .title span {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+    .title h2 {
+        font-size: 34px;
+        margin-bottom: 20px;
+        padding-right: 0px;
+    }
+    .services-text p {
+        font-size: 16px;
+        line-height: 1.4;
+    }
+    .services-swiper {
+        width: 100%;
+        padding: 0 0 40px 20px;
+    }
+    .swiper-title {
+        margin-bottom: 20px;
+    }
+    .swiper-title h3 {
+        font-size: 26px;
+    }
+    .swiper-slide {
+        padding: 20px;
+    }
+    .swiper-slide span {
+        font-size: 14px;
+        width: 34px;
+        height: 34px;
+    }
+    .swiper-text p {
+        font-size: 16px;
+        margin-bottom: 15px;
+        padding-right: 0;
+    }
+    .swiper-io-services {
+        margin-top: 20px;
+    }
+    .swiper-io-services h4 {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+    .swiper-io-services p {
+        font-size: 14px;
+    }
+    .projects-text {
+        padding: 20px;
+    }
+    .projects-text .swiper-text p {
+        font-size: 14px;
+    }
+    .about {
+        width: 100%;
+        padding: 0px 0 40px 20px;
+    }
+    .item img {
+        height: 40px;
+        margin-bottom: 25px;
+    }
+    .item h3 {
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+    .item p {
+        font-size: 16px;
+    }
+    .animacija {
+        height: 50px;
+        width: 100%;
+        margin: 0 0 40px;
+    }
+    .contact-item h3 {
+        font-size: 22px;
+    }
+    .contact-item p {
+        font-size: 16px;
+        margin-top: 20px;
+    }
+    .contact-item a {
+        font-size: 16px;
+    }
+    footer {
+        padding: 15px 0;
+        font-size: 14px;
+    }
+
+}
+@media screen and (max-width: 991px){
+    header nav {
+        display: none;
+    }
+    .menu-toggle {
+        display: block;
+    }
+    .menu-active nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 50%;
+    }
+    
+    .intro-text .container {
+        display: block;
+    }
+    
+    .container-x {
+        display: block;
+    }
+    
+    .services-01::before {
+        width: 100%;
+    }
+    .services-swiper::before {
+        width: 0%;
+    }
+    
+    .about::before {
+        width: 0%;
+    }
+    
+    .about-items {
+        display: block;
+    }
+    .item {
+        padding: 0; 
+        margin-bottom: 40px;
+        width: 100%;
+    }
+    
+    .contact-info {
+        display: block;
+    }
+    .contact-item {
+        width: 100%;
+        padding: 0 0 20px;
+    }
+    
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .container {
+        padding: 0 50px;
+    }
+    header {
+        padding: 30px 0;
+    }
+    nav a{
+        padding: 0 0 40px 0;
+        font-size: 30px;
+    }
+    .naslovna-text h2 {
+        font-size: 70px;
+        margin-bottom: 30px;
+    }
+    .naslovna-text p {
+        font-size: 18px;
+    }
+    .intro-text {
+        padding: 50px 0;
+        max-width: 100%;
+    }
+    .intro-text h2 {
+        font-size: 26px;
+        max-width: 100%;
+        margin-bottom: 50px;
+    }
+    .intro-text a {
+        font-size: 18px;
+        padding: 15px 30px;
+    }
+    .services-01 {
+        width: 100%;
+        padding: 50px;
+        border-right: 0px;
+    }
+    .services-swiper {
+        width: 100%;
+        padding: 0 0 50px 50px;
+    }
+    .about {
+        width: 100%;
+        padding: 0px 0 50px 50px;
+    }
+    .animacija {
+        height: 60px;
+        width: 100%;
+        margin: 0 0 50px;
+    }
+    footer {
+        padding: 25px 0;
+        font-size: 18px;
+    }
 }

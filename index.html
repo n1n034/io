@@ -20,12 +20,17 @@
                 </a>
             </div>
             <nav>
-                <a href="#">Philosophy & services</a>
-                <a href="#">Projects</a>
-                <a href="#">Meet io</a>
-                <a href="#">Clients</a>
-                <a href="#">Contact</a>
+                <a href="#services">Philosophy & services</a>
+                <a href="#projects">Projects</a>
+                <a href="#meet">Meet io</a>
+                <a href="#clients">Clients</a>
+                <a href="#contact">Contact</a>
             </nav>
+            <div class="menu-toggle">
+                <span class="bar bar1"></span>
+                <span class="bar bar2"></span>
+                <span class="bar bar3"></span>
+            </div>
         </div>
     </header>
     <section class="naslovna">
@@ -52,7 +57,7 @@
             <a href="#">CONTACT US →</a>
         </div>
     </div>
-    <section class="services">
+    <section class="services" id="services">
         <div class="container-x">
             <div class="services-01">
                 <div class="title">
@@ -171,7 +176,7 @@
             </div>
         </div>
     </section>
-    <section class="services">
+    <section class="projects" id="projects">
         <div class="container-x">
             <div class="services-01">
                 <div class="title">
@@ -288,7 +293,7 @@
             </div>
         </div>
     </section>
-    <section class="meet">
+    <section class="meet" id="meet">
         <div class="container-x">
             <div class="services-01">
                 <div class="title">
@@ -335,7 +340,7 @@
     <section class="image">
         <img src="/io/assets/images/pozadina2.jpg" alt="pozadina2">
     </section>
-    <section class="clients">
+    <section class="clients" id="clients">
         <div class="container-x">
             <div class="services-01">
                 <div class="title">
@@ -348,7 +353,7 @@
             </div>
         </div>
     </section>
-    <section class="contact">
+    <section class="contact" id="contact">
         <div class="container-x">
             <div class="services-01">
                 <div class="title">
@@ -356,20 +361,88 @@
                     <h2>Contact</h2>
                 </div>
             </div>
-            
+            <div class="about">          
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <h3>Ivana Geber</h3>
+                        <span>Founder</span>
+                        <p>
+                            Organizational development & 
+                            <br>
+                            service design consulant
+                        </p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>Say hi! Say hi!</h3>
+                        <p>
+                            IO, vl. Ivana Geber
+                            <br>
+                            Vjenceslava Novaka 30, Zagreb
+                        </p>
+                        <a href="https://www.google.com/maps/place/Novakova+ul.+30,+10000,+Zagreb/@45.8164468,15.9821401,19z/data=!3m1!4b1!4m6!3m5!1s0x4765d70105fb144d:0x88718ce8fee0250e!8m2!3d45.8164459!4d15.9827838!16s%2Fg%2F11lflfkwvj?entry=ttu" target="_blank">
+                            GET DIRECTION 
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
-        
+    <footer>
+        <div class="container">
+            <p>2023 by IO, obrt za poslovne usluge, vl. Ivana Geber</p>
+        </div>
+    </footer>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
     var swiper = new Swiper(".swiper1", {
-        spaceBetween: 30,
-        slidesPerView: 1.8,
+        breakpoints: {
+                300: {
+                    slidesPerView: 1.2,
+                    spaceBetween: 20,
+                    slidesOffsetAfter: 20,
+                },
+                768: {
+                    slidesPerView: 1.2,
+                    spaceBetween: 20,
+                    slidesOffsetAfter: 50,
+                },
+                991: {
+                    slidesPerView: 2.3,
+                    spaceBetween: 30,
+                    slidesOffsetAfter: 50,
+                },
+            },
     });
 
     var swiper = new Swiper(".swiper2", {
-        spaceBetween: 30,
-        slidesPerView: 2.3,
+        breakpoints: {
+                300: {
+                    slidesPerView: 1.2,
+                    spaceBetween: 20,
+                    slidesOffsetAfter: 20,
+                },
+                768: {
+                    slidesPerView: 1.2,
+                    spaceBetween: 20,
+                    slidesOffsetAfter: 50,
+                },
+                991: {
+                    slidesPerView: 2.3,
+                    spaceBetween: 30,
+                    slidesOffsetAfter: 50,
+                },
+            },
+    });
+</script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script> 
+<script>
+    $( document ).ready(function() {
+        $('.menu-toggle').on('click',function() {
+            $('body').toggleClass('menu-active');
+        });
+        $('header nav a').on('click', function() {
+            $('body').removeClass('menu-active');
+        });
     });
 </script>
 </body>
